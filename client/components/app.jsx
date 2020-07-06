@@ -10,8 +10,14 @@ export default class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  getGrades() {
+    fetch('/api/db')
+      .then(res => res.json())
+      .then(grades => this.setState({ grades }));
+  }
 
+  componentDidMount() {
+    this.getGrades();
   }
 
   render() {
