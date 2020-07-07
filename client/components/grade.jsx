@@ -12,5 +12,4 @@ export default function Grade(props) {
   } else {
     return null;
   }
-
 }

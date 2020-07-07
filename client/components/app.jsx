@@ -23,10 +23,14 @@ export default class App extends React.Component {
 
   render() {
     const st = this.state;
+    let grades = [];
+    if (st.grades.grades) {
+      grades = st.grades.grades;
+    }
     return (
       <div>
         <Header title={st.appHeader} />
-        <GradeTable grades={st.grades} />
+        <GradeTable grades={grades} />
       </div>
     );
   }
