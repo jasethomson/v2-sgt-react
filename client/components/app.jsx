@@ -7,14 +7,27 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       grades: [],
-      appHeader: 'Student Grade Table'
+      appHeader: 'Student Grade Table',
+      gradeAvg: 0
     };
   }
 
   getGrades() {
     fetch('/api/db')
       .then(res => res.json())
-      .then(grades => this.setState({ grades }));
+      .then(grades => this.setState({ grades }))
+      .then(() => this.getAverageGrade());
+  }
+
+  getAverageGrade() {
+    if (this.state.grades) {
+      const grades = this.state.grades.grades;
+      let gradeTotal = 0;
+      grades.map(gradeObj => {
+        gradeTotal += gradeObj.grade;
+      });
+      this.setState({ gradeAvg: Math.ceil(gradeTotal / grades.length) });
+    }
   }
 
   componentDidMount() {
@@ -29,7 +42,7 @@ export default class App extends React.Component {
     }
     return (
       <div>
-        <Header title={st.appHeader} />
+        <Header title={st.appHeader} gradeAvg={st.gradeAvg} />
         <GradeTable grades={grades} />
       </div>
     );
