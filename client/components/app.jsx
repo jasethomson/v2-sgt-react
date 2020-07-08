@@ -12,6 +12,7 @@ export default class App extends React.Component {
       gradeAvg: 0
     };
     this.postGrade = this.postGrade.bind(this);
+    this.deleteGrade = this.deleteGrade.bind(this);
   }
 
   getGrades() {
@@ -42,6 +43,17 @@ export default class App extends React.Component {
       .then(res => { this.getGrades(); });
   }
 
+  deleteGrade(id) {
+    const deleteId = { id: parseInt(id) };
+    const req = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(deleteId)
+    };
+    fetch(`/api/grades/${parseInt(id)}`, req)
+      .then(res => { this.getGrades(); });
+  }
+
   componentDidMount() {
     this.getGrades();
   }
@@ -51,7 +63,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Header title={st.appHeader} gradeAvg={st.gradeAvg} />
-        <GradeTable grades={st.grades} />
+        <GradeTable grades={st.grades} deleteGrade={this.deleteGrade} />
         <GradeForm postGrade={this.postGrade} />
       </div>
     );

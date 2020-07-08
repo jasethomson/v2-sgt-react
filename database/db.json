@@ -19,12 +19,6 @@
       "grade": 100
     },
     {
-      "name": "jase thomson",
-      "course": "math",
-      "grade": "91",
-      "id": 33
-    },
-    {
       "name": "evelyn toon",
       "course": "Art",
       "grade": "95",
@@ -35,12 +29,6 @@
       "course": "soccer",
       "grade": "99",
       "id": 35
-    },
-    {
-      "name": "dorothy thomson",
-      "course": "history",
-      "grade": "100",
-      "id": 36
     }
   ]
 }
