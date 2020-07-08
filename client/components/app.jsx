@@ -11,6 +11,7 @@ export default class App extends React.Component {
       appHeader: 'Student Grade Table',
       gradeAvg: 0
     };
+    this.postGrade = this.postGrade.bind(this);
   }
 
   getGrades() {
@@ -25,7 +26,7 @@ export default class App extends React.Component {
       const grades = this.state.grades;
       let gradeTotal = 0;
       grades.map(gradeObj => {
-        gradeTotal += gradeObj.grade;
+        gradeTotal += parseInt(gradeObj.grade);
       });
       this.setState({ gradeAvg: Math.ceil(gradeTotal / grades.length) });
     }
@@ -37,13 +38,8 @@ export default class App extends React.Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(grade)
     };
-
-    fetch('/api/db', req)
-      .then(() => {
-        const allGrades = this.state.grades.concat(grade);
-        this.setState({ grades: allGrades });
-      })
-      .finally(() => this.getGrades());
+    fetch('/api/grades', req)
+      .then(res => { this.getGrades(); });
   }
 
   componentDidMount() {
