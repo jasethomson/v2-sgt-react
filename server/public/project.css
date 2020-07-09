@@ -17,6 +17,21 @@ body {
 img {
   max-width: 100%; }
 
+h1 {
+  font-size: calc(22px + (40 - 22) * ((100vw - 300px) / (1600 - 300))); }
+
+h2 {
+  font-size: calc(22px + (32 - 22) * ((100vw - 300px) / (1600 - 300))); }
+
+h3 {
+  font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300))); }
+
+h4 {
+  font-size: calc(22px + (24 - 22) * ((100vw - 300px) / (1600 - 300))); }
+
+h5 {
+  font-size: calc(22px + (20 - 22) * ((100vw - 300px) / (1600 - 300))); }
+
 .input {
   display: block;
   width: 300px;
@@ -68,10 +83,17 @@ img {
 
 .landing {
   padding: 3rem 5rem; }
+  @media (max-width: 767px) {
+    .landing {
+      padding: 1rem; } }
   .landing header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -79,18 +101,40 @@ img {
         -ms-flex-align: center;
             align-items: center;
     border-bottom: 2px solid #dee2e6; }
+    @media (max-width: 900px) {
+      .landing header {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; } }
   .landing .mainContents {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding-top: 1rem; }
+    @media (max-width: 900px) {
+      .landing .mainContents {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; } }
   .landing .addGradeContents {
     margin-left: 1rem; }
+    @media (max-width: 767px) {
+      .landing .addGradeContents {
+        margin-left: 0rem; } }
   .landing .table {
     margin-right: 1rem; }
+    @media (max-width: 767px) {
+      .landing .table {
+        margin-right: 0rem; } }
   .landing h3 {
     padding: .5rem 0rem; }
   .landing form {
@@ -115,5 +159,51 @@ img {
     margin-top: 8px; }
   .landing .tdText {
     padding: calc(54px - 29px); }
+    @media (max-width: 767px) {
+      .landing .tdText {
+        padding: 12px;
+        padding-left: 50%; } }
+  @media (max-width: 767px) {
+    .landing .input {
+      width: 100%; } }
+  @media only screen and (max-width: 767px), (min-device-width: 767px) and (max-device-width: 1024px) {
+    .landing {
+      /* Force table to not be like tables anymore */
+      /* Hide table headers (but not display: none;, for accessibility) */
+      /*
+      Label the data
+      */ }
+      .landing table, .landing thead, .landing tbody, .landing th, .landing td, .landing tr {
+        display: block; }
+      .landing thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px; }
+      .landing tr {
+        border: 1px solid #ccc; }
+      .landing td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%; }
+      .landing td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding: 12px;
+        font-weight: bold;
+        white-space: nowrap; }
+      .landing td:nth-of-type(1):before {
+        content: "Name"; }
+      .landing td:nth-of-type(2):before {
+        content: "Course"; }
+      .landing td:nth-of-type(3):before {
+        content: "Grade"; }
+      .landing td:nth-of-type(4):before {
+        content: "Operation"; } }
 
 /*# sourceMappingURL=project.css.map */
