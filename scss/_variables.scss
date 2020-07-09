@@ -1,0 +1,27 @@
+
+//Font
+$first-font: 'Spartan', sans-serif;
+$first-color: #efa812;
+$second-color: #2b2b2b;
+$third-color: #787878;
+$font-color-dark: #2b2b2b;
+$font-color-light: white !global;
+$base-font-size: 0.94rem !global; //same as 15px
+$line-height: 161.8% !global;
+
+//Nav
+$nav-height: 76px;
+
+//Header sizing
+$h1-headline: 2.5rem; //40px
+$h2-headline: 2rem; //32px
+$h3-headline: 1.75rem; //28px
+$h4-headline: 1.5rem; //24px
+$h5-headline: 1.25rem; //20px
+$h6-headline: 1rem; //16px
+$h1-headline-fluid: calc(22px + (40 - 22) * ((100vw - 300px) / (1600 - 300))) !global;
+$h2-headline-fluid: calc(22px + (32 - 22) * ((100vw - 300px) / (1600 - 300))) !global;
+$h3-headline-fluid: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300))) !global;
+$h4-headline-fluid: calc(22px + (24 - 22) * ((100vw - 300px) / (1600 - 300))) !global;
+$h5-headline-fluid: calc(22px + (20 - 22) * ((100vw - 300px) / (1600 - 300))) !global;
+$h6-headline-fluid: calc(22px + (16 - 22) * ((100vw - 300px) / (1600 - 300))) !global;
