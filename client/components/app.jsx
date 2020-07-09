@@ -61,10 +61,16 @@ export default class App extends React.Component {
   render() {
     const st = this.state;
     return (
-      <div>
+      <div className="landing">
         <Header title={st.appHeader} gradeAvg={st.gradeAvg} />
-        <GradeTable grades={st.grades} deleteGrade={this.deleteGrade} />
-        <GradeForm postGrade={this.postGrade} />
+        <div className="mainContents">
+          <GradeTable grades={st.grades} deleteGrade={this.deleteGrade} />
+          <div className="addGradeContents">
+            <h3>Add Grade</h3>
+            <GradeForm postGrade={this.postGrade} />
+          </div>
+
+        </div>
       </div>
     );
   }
