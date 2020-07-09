@@ -39,30 +39,39 @@ export default class GradeForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          id="name"
-          className="input"
-          placeholder="Name"
-          value={this.state.student.name}
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          id="course"
-          className="input"
-          placeholder="Course"
-          value={this.state.student.course}
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          id="grade"
-          className="input"
-          placeholder="Grade"
-          value={this.state.student.grade}
-          onChange={this.handleChange}
-        />
+        <div className="inputContents">
+          <i className="fa fa-user fa-lg" aria-hidden="true"></i>
+          <input
+            type="text"
+            id="name"
+            className="input"
+            placeholder="Name"
+            value={this.state.student.name}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div className="inputContents">
+          <i className="fa fa-list-alt fa-lg" aria-hidden="true"></i>
+          <input
+            type="text"
+            id="course"
+            className="input"
+            placeholder="Course"
+            value={this.state.student.course}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div className="inputContents">
+          <i className="fa fa-graduation-cap fa-lg" aria-hidden="true"></i>
+          <input
+            type="text"
+            id="grade"
+            className="input"
+            placeholder="Grade"
+            value={this.state.student.grade}
+            onChange={this.handleChange}
+          />
+        </div>
         <div className="buttonContainer">
           <input
             type="submit"
