@@ -29,7 +29,8 @@ export default class App extends React.Component {
       grades.map(gradeObj => {
         gradeTotal += parseInt(gradeObj.grade);
       });
-      this.setState({ gradeAvg: Math.ceil(gradeTotal / grades.length) });
+      const gradeSum = gradeTotal !== 0 ? Math.ceil(gradeTotal / grades.length) : 0;
+      this.setState({ gradeAvg: gradeSum });
     }
   }
 
