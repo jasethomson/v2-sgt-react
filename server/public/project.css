@@ -55,7 +55,9 @@ h5 {
   font-size: 16px;
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0; }
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-left: none; }
 
 .button {
   display: inline-block;
@@ -157,15 +159,40 @@ h5 {
     margin: 0rem;
     padding: .25rem .75rem;
     margin-top: 8px; }
+  .landing .inputContents {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .landing .tdText {
     padding: calc(54px - 29px); }
     @media (max-width: 767px) {
       .landing .tdText {
         padding: 12px;
         padding-left: 50%; } }
-  @media (max-width: 767px) {
-    .landing .input {
-      width: 100%; } }
+  .landing .input {
+    margin: 0rem;
+    margin-bottom: 1rem; }
+    @media (max-width: 767px) {
+      .landing .input {
+        width: 100%; } }
+  .landing .fa-lg {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    border-right: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0; }
+  .landing .fa-user {
+    height: 46px;
+    width: 51px; }
+  .landing .fa-list-alt {
+    height: 46px;
+    width: 51px; }
+  .landing .fa-graduation-cap {
+    height: 46px;
+    width: 51px; }
   @media only screen and (max-width: 767px), (min-device-width: 767px) and (max-device-width: 1024px) {
     .landing {
       /* Force table to not be like tables anymore */
