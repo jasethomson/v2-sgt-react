@@ -1,24 +1,43 @@
 $currPage: landing;
+$pageBreak: 900px;
+$paddingBreak: 767px;
 
 .#{$currPage} {
   padding: 3rem 5rem;
+  @media (max-width: $paddingBreak) {
+    padding: 1rem;
+  }
   header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #dee2e6;
+    @media (max-width: $pageBreak) {
+      flex-direction: column;
+    }
   }
   .mainContents{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding-top: 1rem;
+    @media (max-width: $pageBreak) {
+      flex-direction: column;
+    }
 
   }
   .addGradeContents {
     margin-left: 1rem;
+    @media (max-width: $paddingBreak) {
+      margin-left: 0rem;
+    }
   }
   .table {
     margin-right: 1rem;
+    @media (max-width: $paddingBreak) {
+      margin-right: 0rem;
+    }
   }
   h3 {
     padding: .5rem 0rem;
@@ -46,5 +65,65 @@ $currPage: landing;
   }
   .tdText {
     padding: calc(54px - 29px);
+    @media (max-width: $paddingBreak) {
+      padding: 12px;
+      padding-left: 50%;
+    }
   }
+  // td,tr,th {
+  //   @media (max-width: $paddingBreak) {
+  //     padding: 0rem;
+  //   }
+  // }
+  .input {
+    @media (max-width: $paddingBreak) {
+      width: 100%;
+    }
+  }
+  @media
+    only screen and (max-width: $paddingBreak),
+    (min-device-width: $paddingBreak) and (max-device-width: 1024px)  {
+
+      /* Force table to not be like tables anymore */
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      /* Hide table headers (but not display: none;, for accessibility) */
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      tr { border: 1px solid #ccc; }
+
+      td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+      }
+
+      td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding: 12px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      /*
+      Label the data
+      */
+      td:nth-of-type(1):before { content: "Name"; }
+      td:nth-of-type(2):before { content: "Course"; }
+      td:nth-of-type(3):before { content: "Grade"; }
+      td:nth-of-type(4):before { content: "Operation"; }
+    }
 }
