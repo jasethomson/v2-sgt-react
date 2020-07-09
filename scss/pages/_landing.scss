@@ -63,6 +63,9 @@ $paddingBreak: 767px;
     padding: .25rem .75rem;
     margin-top: 8px;
   }
+  .inputContents {
+    display: flex;
+  }
   .tdText {
     padding: calc(54px - 29px);
     @media (max-width: $paddingBreak) {
@@ -70,15 +73,34 @@ $paddingBreak: 767px;
       padding-left: 50%;
     }
   }
-  // td,tr,th {
-  //   @media (max-width: $paddingBreak) {
-  //     padding: 0rem;
-  //   }
-  // }
   .input {
+    margin: 0rem;
+    margin-bottom: 1rem;
     @media (max-width: $paddingBreak) {
       width: 100%;
     }
+  }
+  .fa-lg {
+    padding: 1rem;
+    background: rgba(0,0,0,.05);
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    border-right: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .fa-user {
+    height: 46px;
+    width: 51px;
+  }
+  .fa-list-alt {
+    height: 46px;
+    width: 51px;
+  }
+  .fa-graduation-cap {
+    height: 46px;
+    width: 51px;
   }
   @media
     only screen and (max-width: $paddingBreak),
