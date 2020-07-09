@@ -42,6 +42,7 @@ export default class GradeForm extends React.Component {
         <input
           type="text"
           id="name"
+          className="input"
           placeholder="Name"
           value={this.state.student.name}
           onChange={this.handleChange}
@@ -49,6 +50,7 @@ export default class GradeForm extends React.Component {
         <input
           type="text"
           id="course"
+          className="input"
           placeholder="Course"
           value={this.state.student.course}
           onChange={this.handleChange}
@@ -56,15 +58,20 @@ export default class GradeForm extends React.Component {
         <input
           type="text"
           id="grade"
+          className="input"
           placeholder="Grade"
           value={this.state.student.grade}
           onChange={this.handleChange}
         />
-        <input
-          type="submit"
-          value="Add"
-        />
-        <button type="button" onClick={this.clearForm}>Cancel</button>
+        <div className="buttonContainer">
+          <input
+            type="submit"
+            className="button"
+            value="Add"
+          />
+          <button type="button" className="button cancelButton btn-danger" onClick={this.clearForm}>Cancel</button>
+        </div>
+
       </form>
     );
   }

@@ -29,7 +29,8 @@ export default class App extends React.Component {
       grades.map(gradeObj => {
         gradeTotal += parseInt(gradeObj.grade);
       });
-      this.setState({ gradeAvg: Math.ceil(gradeTotal / grades.length) });
+      const gradeSum = gradeTotal !== 0 ? Math.ceil(gradeTotal / grades.length) : 0;
+      this.setState({ gradeAvg: gradeSum });
     }
   }
 
@@ -61,10 +62,16 @@ export default class App extends React.Component {
   render() {
     const st = this.state;
     return (
-      <div>
+      <div className="landing">
         <Header title={st.appHeader} gradeAvg={st.gradeAvg} />
-        <GradeTable grades={st.grades} deleteGrade={this.deleteGrade} />
-        <GradeForm postGrade={this.postGrade} />
+        <div className="mainContents">
+          <GradeTable grades={st.grades} deleteGrade={this.deleteGrade} />
+          <div className="addGradeContents">
+            <h3>Add Grade</h3>
+            <GradeForm postGrade={this.postGrade} />
+          </div>
+
+        </div>
       </div>
     );
   }

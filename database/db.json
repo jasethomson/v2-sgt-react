@@ -1,34 +1,16 @@
 {
   "grades": [
     {
-      "id": 5,
-      "name": "Kyle Simpson",
-      "course": "JavaScript",
-      "grade": 100
-    },
-    {
-      "id": 12,
-      "name": "Brendan Eich",
-      "course": "JavaScript",
-      "grade": 100
-    },
-    {
-      "id": 32,
-      "name": "Douglas Crockford",
-      "course": "JavaScript",
-      "grade": 100
+      "name": "jase thomson",
+      "course": "math",
+      "grade": "95",
+      "id": 1
     },
     {
       "name": "evelyn toon",
       "course": "Art",
-      "grade": "95",
-      "id": 34
-    },
-    {
-      "name": "harper toon thomson",
-      "course": "soccer",
-      "grade": "99",
-      "id": 35
+      "grade": "100",
+      "id": 2
     }
   ]
 }
