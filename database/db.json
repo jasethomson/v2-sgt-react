@@ -29,6 +29,12 @@
       "course": "soccer",
       "grade": "99",
       "id": 35
+    },
+    {
+      "name": "dorothy thomson",
+      "course": "history",
+      "grade": "91",
+      "id": 36
     }
   ]
 }
