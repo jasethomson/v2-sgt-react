@@ -11,6 +11,12 @@
       "course": "Art",
       "grade": "100",
       "id": 2
+    },
+    {
+      "name": "harper toon thomson",
+      "course": "soccer",
+      "grade": "100",
+      "id": 3
     }
   ]
 }
