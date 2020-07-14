@@ -1,8 +1,10 @@
-const db = require('pg');
-const connection = db.createConnection({
-  user: process.env.DB_USER,
-  password: process.env.DB_PW,
-  database: process.env.DB_DATABASE
+const { Client } = require('pg');
+const connection = new Client({
+  user: process.env.PGUSER,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+  password: process.env.PGPASSWORD,
+  port: process.env.PGPORT
 });
 
 module.exports = connection;
