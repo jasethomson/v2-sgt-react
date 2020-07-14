@@ -1,34 +1,44 @@
+require('dotenv/config');
+// const path = require('path');
+const connection = require('./connection');
 const express = require('express');
-const { Client } = require('pg');
 
-const connectStr = 'postgres://dev:postgres@localhost:8081/sgt';
+var server = express();
+const PORT = process.env.PORT;
+connection.connect();
 
-const client = new Client({
-  connectStr: connectStr
+server.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({
+    error: 'Internal Server Error',
+    message: 'An unexpected error has occurred'
+  });
+
 });
 
-client.connect();
-
-var app = express();
-
-app.set('port', process.env.PORT || 3001);
-
-app.get('/', function (req, res, next) {
-  client.query('SELECT * FROM grades',
-    function (err, result) {
-      if (err) {
-        // eslint-disable-next-line no-console
-        console.log(err);
-        res.status(400).send(err);
-      }
-      res.status(200).send(result.rows);
-    });
-});
-
-app.listen(3001, function () {
+server.listen(PORT, () => {
   // eslint-disable-next-line no-console
-  console.log('JSON Server listening on port 3001\n');
+  console.log('hey you, they are listening here');
 });
+
+// app.set('port', process.env.PORT || 3001);
+
+// app.get('/', function (req, res, next) {
+//   client.query('SELECT * FROM grades',
+//     function (err, result) {
+//       if (err) {
+//         // eslint-disable-next-line no-console
+//         console.log(err);
+//         res.status(400).send(err);
+//       }
+//       res.status(200).send(result.rows);
+//     });
+// });
+
+// app.listen(3001, function () {
+//   // eslint-disable-next-line no-console
+//   console.log('JSON Server listening on port 3001\n');
+// });
 
 // require('dotenv/config');
 // const path = require('path');
