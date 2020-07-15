@@ -1,9 +1,9 @@
 require('dotenv/config');
 const connection = require('./connection');
 const express = require('express');
-
+// const grades = require('./grades');
 const server = express();
-const PORT = process.env.PGPORT;
+const PORT = process.env.PORT;
 connection.connect();
 
 server.use((err, req, res, next) => {

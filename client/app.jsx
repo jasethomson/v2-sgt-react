@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './header';
-import GradeTable from './gradeTable';
-import GradeForm from './gradeForm';
+import Header from './components/header';
+import GradeTable from './components/gradeTable';
+import GradeForm from './components/gradeForm';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ export default class App extends React.Component {
   }
 
   getGrades() {
-    fetch('/api/db')
+    fetch('/api/grades')
       .then(res => res.json())
       .then(grades => this.setState({ grades: grades.grades }))
       .then(() => this.getAverageGrade());
